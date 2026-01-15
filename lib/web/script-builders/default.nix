@@ -1,4 +1,3 @@
-{}:
 let 
   kernel = import ../../kernel {};
   scriptsBuilder = server-cmd: { pkgs }: reserved-name:

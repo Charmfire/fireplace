@@ -1,6 +1,2 @@
-{
-  imports = [
-    ./script-builders
-    ./starter
-  ];
-}
+(import ./script-builders) //
+(import ./starter)
