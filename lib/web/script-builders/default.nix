@@ -22,7 +22,7 @@ let
 in
 {
   starter = import ./starter.nix;
-  astroScriptsBuilder =  import ./astro.nix {inherit scriptsBuilder;};
+  scriptBuilders.astro =  import ./astro.nix {inherit scriptsBuilder;};
   zolaScriptsBuilder =   import ./zola.nix {inherit scriptsBuilder;};
   scriptBuilders.nextjs =   import ./nextjs.nix {inherit scriptsBuilder;};
 }
