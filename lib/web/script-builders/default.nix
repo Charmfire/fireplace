@@ -11,8 +11,8 @@ in
     nextjs = import ./nextjs.nix { scriptsBuilder = plumbing.scriptsBuilderFactory; };
 
     withEnv = {
-      astro = config: astro (plumbing.attribute-loader config);
-      nextjs = config: nextjs (plumbing.attribute-loader config);
+      astro = env: astro (plumbing.attribute-loader {inherit env; });
+      nextjs = env: nextjs (plumbing.attribute-loader {inherit env; });
     };
   };
 }
