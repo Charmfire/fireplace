@@ -1,5 +1,8 @@
 let
   plumbing = import ./plumbing;
+
+  load-attributes =
+    { env, pkgs }: ((plumbing.attribute-loader { inherit env; }) // { inherit pkgs; });
 in
 {
   inherit (plumbing) attribute-loader;
@@ -11,8 +14,8 @@ in
     nextjs = import ./nextjs.nix { scriptsBuilder = plumbing.scriptsBuilderFactory; };
 
     withEnv = {
-      astro = env: astro (plumbing.attribute-loader {inherit env; });
-      nextjs = env: nextjs (plumbing.attribute-loader {inherit env; });
+      astro = { env, pkgs }: astro load-attributes { inherit env pkgs; };
+      nextjs = { env, pkgs }: nextjs load-attributes { inherit env pkgs; };
     };
   };
 }
