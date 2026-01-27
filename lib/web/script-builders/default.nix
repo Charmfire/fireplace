@@ -21,6 +21,7 @@ let
   };
 in
 {
+  attribute-loader = import ./attribute-loader.nix;
   starter = import ./starter.nix;
   scriptBuilders.astro =  import ./astro.nix {inherit scriptsBuilder;};
   zolaScriptsBuilder =   import ./zola.nix {inherit scriptsBuilder;};
