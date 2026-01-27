@@ -12,6 +12,7 @@ in
 
     withEnv = {
       astro = config: astro (plumbing.attribute-loader config);
+      nextjs = config: nextjs (plumbing.attribute-loader config);
     };
   };
 }
