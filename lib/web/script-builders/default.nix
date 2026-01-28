@@ -14,8 +14,8 @@ in
     nextjs = import ./nextjs.nix { scriptsBuilder = plumbing.scriptsBuilderFactory; };
 
     withEnv = {
-      astro = { env, pkgs }: astro load-attributes { inherit env pkgs; };
-      nextjs = { env, pkgs }: nextjs load-attributes { inherit env pkgs; };
+      astro = { env, pkgs }: astro (load-attributes { inherit env pkgs; });
+      nextjs = { env, pkgs }: nextjs (load-attributes { inherit env pkgs; });
     };
   };
 }
