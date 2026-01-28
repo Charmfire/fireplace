@@ -1,9 +1,9 @@
 server-cmd:
-{ pkgs }:
+{ pkgs, reserved-name, ... }:
 let 
   kernel = import ../../../kernel { };
 in
-reserved-name: {
+{
   qr.exec = "qrencode -t ANSIUTF8 'https://${reserved-name}.share.zrok.io'";
   tunnel.exec = ''
     qr

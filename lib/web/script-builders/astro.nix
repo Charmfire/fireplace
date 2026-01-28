@@ -1,4 +1,4 @@
 {scriptsBuilder}: 
-{port, pkgs, ...} : (scriptsBuilder ''
+args@{port, pkgs, ...} : (scriptsBuilder ''
     pnpm dev --port ${port} --host
-    '' {inherit pkgs;})
+    '' args)
